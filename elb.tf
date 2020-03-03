@@ -1,6 +1,7 @@
 resource "aws_elb" "test" {
   name               = "test-terraform-elb"
   availability_zones = ["eu-west-2a", "eu-west-2b"]
+  subnets = ""
 
   access_logs {
     bucket        = "test"
