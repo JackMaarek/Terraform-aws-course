@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "JA_tf_test_main_bucket" {
   acl    = "private"
 
   logging {
-    target_bucket = "${aws_s3_bucket.JA_tf_test_log_bucket}"
+    target_bucket = "${aws_s3_bucket.JA_tf_test_log_bucket.id}"
     target_prefix = "log/"
   }
 }

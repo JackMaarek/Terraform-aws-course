@@ -1,7 +1,6 @@
 resource "aws_elb" "JA_tf_test_load_balancer" {
-  name               = "ja-tf-test-terraform-elb"
+  name               = "ja-tf-test-elb"
   availability_zones = ["eu-west-2a", "eu-west-2b"]
-  subnets = ""
 
   access_logs {
     bucket        = "test"
@@ -21,6 +20,7 @@ resource "aws_elb" "JA_tf_test_load_balancer" {
     instance_protocol  = "http"
     lb_port            = 443
     lb_protocol        = "https"
+    ssl_certificate_id = "${var.cert_location}"
   }
 
   health_check {
@@ -37,6 +37,6 @@ resource "aws_elb" "JA_tf_test_load_balancer" {
   connection_draining_timeout = 400
 
   tags = {
-    Name = "ja-tf-test-terraform-elb"
+    Name = "ja-tf-test-elb"
   }
 }
