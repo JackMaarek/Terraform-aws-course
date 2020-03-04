@@ -1,5 +1,5 @@
-resource "aws_elb" "test" {
-  name               = "test-terraform-elb"
+resource "aws_elb" "JA_tf_test_load_balancer" {
+  name               = "ja-tf-test-terraform-elb"
   availability_zones = ["eu-west-2a", "eu-west-2b"]
   subnets = ""
 
@@ -37,6 +37,6 @@ resource "aws_elb" "test" {
   connection_draining_timeout = 400
 
   tags = {
-    Name = "test-terraform-elb"
+    Name = "ja-tf-test-terraform-elb"
   }
 }

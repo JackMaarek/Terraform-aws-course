@@ -1,16 +1,14 @@
-resource "aws_s3_bucket" "main-lb-logs" {
-  bucket = "test-jack - ${workspace.workspace}"
-
-  tags = {
-    Name = "LB Logs"
-  }
+resource "aws_s3_bucket" "JA_tf_test_log_bucket" {
+  bucket = "my-vpc-log-bucket"
+  acl    = "log-delivery-write"
 }
 
-resource "aws_s3_access_point" "main-lb-logs-exemples" {
-  bucket = "${aws_s3_bucket.example.id}"
-  name   = "example"
+resource "aws_s3_bucket" "JA_tf_test_main_bucket" {
+  bucket = "my-main-test-bucket"
+  acl    = "private"
 
-  vpc_configuration {
-    vpc_id = "${aws_vpc.example.id}"
+  logging {
+    target_bucket = "${aws_s3_bucket.JA_tf_test_log_bucket}"
+    target_prefix = "log/"
   }
 }

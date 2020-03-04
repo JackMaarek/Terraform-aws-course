@@ -9,11 +9,8 @@ variable "secret_key" {
 }
 
 variable "vpc_cidr" {
-  description = "CIDR for the VPC"
+  description = "CIDR main VPC"
   type        = "string"
   default     = "10.0.0.0/16"
 }
-
-variable "elb_subnet" {
-  
-}
+variable "vpc_id" {}
