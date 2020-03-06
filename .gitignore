@@ -1,6 +1,4 @@
 .DS_Store
 .terraform
 terraform.tfvars
-JA-tf-test-cert.pem
-key.pem
 CloudArchitecture-VPC.svg

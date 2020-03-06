@@ -1,5 +1,5 @@
 resource "aws_instance" "bastion" {
-  ami                    = "ami-03b4b78aae82b30f1" # Amazon Linux 2 AMI for EU-WEST-3
+  ami                    = "ami-03b4b78aae82b30f1"
   instance_type          = "t2.micro"
   key_name               = var.bastion_key_name
   vpc_security_group_ids = [aws_security_group.JA_tf_bastion_allow_ssh.id]
