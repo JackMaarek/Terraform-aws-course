@@ -1,3 +1,4 @@
+# LB
 resource "aws_elb" "JA_tf_test_load_balancer" {
   name               = "JA-tf-test-elb"
   availability_zones = ["eu-west-2a", "eu-west-2b"]

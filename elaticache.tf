@@ -1,3 +1,4 @@
+# Default Elasticache cluster server
 resource "aws_elasticache_cluster" "JA_tf_elasticache_default" {
   cluster_id           = "cluster-example"
   engine               = "redis"

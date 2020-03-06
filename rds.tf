@@ -1,3 +1,4 @@
+# Default mysql database
 resource "aws_db_instance" "JA_tf_rds-default" {
   allocated_storage    = 20
   storage_type         = "gp2"

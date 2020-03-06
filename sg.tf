@@ -1,3 +1,4 @@
+# Bastion Security group
 resource "aws_security_group" "JA_tf_bastion_allow_ssh" {
   name        = "allow-ssh-bastion"
   description = "Allow SSH inbound traffic towards bastion instance"

@@ -1,3 +1,4 @@
+# Bastion
 resource "aws_instance" "bastion" {
   ami                    = "ami-03b4b78aae82b30f1"
   instance_type          = "t2.micro"
@@ -26,11 +27,13 @@ resource "aws_instance" "bastion" {
   }
 }
 
+# Launch template for autoscaling group
 resource "aws_launch_template" "JA_tf_test_launch_template" {
   image_id      = "ami-0fd9bce3a3384b635"
   instance_type = "t2.micro"
 }
 
+# Autoscaling group 
 resource "aws_autoscaling_group" "JA_tf_test_autoscaling_group" {
   availability_zones = ["eu-west-3a"]
   desired_capacity   = 1

@@ -1,8 +1,10 @@
+# Log bucket
 resource "aws_s3_bucket" "JA_tf_test_log_bucket" {
   bucket = "my-vpc-log-bucket"
   acl    = "log-delivery-write"
 }
 
+# Default bucket
 resource "aws_s3_bucket" "JA_tf_test_main_bucket" {
   bucket = "my-main-test-bucket"
   acl    = "private"
