@@ -6,12 +6,12 @@ resource "aws_s3_bucket" "JA_tf_test_log_bucket" {
 }
 
 # Default bucket
-resource "aws_s3_bucket" "JA_tf_test_main_bucket" {
-  bucket = "my-main-test-bucket"
-  acl    = "private"
+# resource "aws_s3_bucket" "JA_tf_test_main_bucket" {
+#   bucket = "my-main-test-bucket"
+#   acl    = "private"
 
-  logging {
-    target_bucket = aws_s3_bucket.JA_tf_test_log_bucket.id
-    target_prefix = "log/"
-  }
-}
+#   logging {
+#     target_bucket = aws_s3_bucket.JA_tf_test_log_bucket.id
+#     target_prefix = "log/"
+#   }
+# }

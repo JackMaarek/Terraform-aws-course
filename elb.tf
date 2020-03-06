@@ -3,11 +3,11 @@ resource "aws_elb" "JA_tf_test_load_balancer" {
   name               = "JA-tf-test-elb"
   availability_zones = ["eu-west-3a"]
 
-  access_logs {
-    bucket        = "test"
-    bucket_prefix = "jack"
-    interval      = 60
-  }
+  # access_logs {
+  #   bucket        = "${aws_s3_bucket.JA_tf_test_main_bucket.bucket}"
+  #   bucket_prefix = "jack"
+  #   interval      = 60
+  # }
 
   listener {
     instance_port     = 8000
