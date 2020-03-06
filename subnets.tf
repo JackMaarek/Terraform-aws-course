@@ -27,7 +27,7 @@ resource "aws_subnet" "JA_tf_test_secondary_subnet-az2" {
 # AZ3 subnet
 resource "aws_subnet" "JA_tf_test_terciary_subnet-az3" {
   vpc_id                  = aws_vpc.main_selected_vpc.id
-  cidr_block              = "10.0.16.0/20"
+  cidr_block              = "10.0.32.0/20"
   availability_zone       = "eu-west-3b"
   map_public_ip_on_launch = true
 

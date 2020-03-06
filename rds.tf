@@ -5,8 +5,8 @@ resource "aws_db_instance" "JA_tf_rds-default" {
   engine               = "mysql"
   engine_version       = "5.7"
   instance_class       = "db.t2.micro"
-  name                 = "JA-tf-db"
-  username             = "JA-tf"
-  password             = "JA-tf_1583502136 "
+  name                 = "jatfdb"
+  username             = "root"
+  password             = "toorjooj"
   parameter_group_name = "default.mysql5.7"
 }

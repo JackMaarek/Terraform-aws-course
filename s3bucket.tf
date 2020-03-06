@@ -2,6 +2,7 @@
 resource "aws_s3_bucket" "JA_tf_test_log_bucket" {
   bucket = "my-vpc-log-bucket"
   acl    = "log-delivery-write"
+  region = "eu-west-3"
 }
 
 # Default bucket
