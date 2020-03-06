@@ -17,10 +17,10 @@ resource "aws_elb" "JA_tf_test_load_balancer" {
 
   listener {
     instance_port      = 8000
-    instance_protocol  = "http"
-    lb_port            = 443
+    instance_protocol  = "ssl"
+    lb_port            = 22
     lb_protocol        = "https"
-    ssl_certificate_id = "${var.cert_location}"
+    ssl_certificate_id = aws_acm_certificate.cert
   }
 
   health_check {
@@ -39,4 +39,9 @@ resource "aws_elb" "JA_tf_test_load_balancer" {
   tags = {
     Name = "ja-tf-test-elb"
   }
+}
+
+resource "aws_acm_certificate" "cert" {
+  private_key      = tls_private_key.example.private_key_pem
+  certificate_body = tls_self_signed_cert.example.cert_pem
 }
